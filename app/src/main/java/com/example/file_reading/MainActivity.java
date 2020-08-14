@@ -1,9 +1,12 @@
 package com.example.file_reading;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -25,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv=findViewById(R.id.tv);
+
+//        final ImageButton record_Btn = (ImageButton) findViewById(R.id.play_btn);
+//        record_Btn.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                record_Btn.setSelected(true);
+//            }
+//        });
+
+
+
     }
 
     public void clickBtn(View view) {
@@ -63,16 +76,19 @@ public class MainActivity extends AppCompatActivity {
 
                 String index= jo.getString("index");
                 String speaking= jo.getString("speaking");
-                JSONObject flag=jo.getJSONObject("flag");
-                String st= flag.getString("startTime");
-                String et= flag.getString("endTime");
+                //JSONObject flag=jo.getJSONObject("flag");
+                String st= jo.getString("startTime");
+                String et= jo.getString("endTime");
 
-                s += index+" : "+speaking+" "+ " "+" "+" "+ st+","+et+"\n";
+                s +="speaking index"+"  "+index+"                                              "+st+"~"+et+"\n"+"\n"+"   "+speaking+"\n"+"\n"+"\n";
             }
             tv.setText(s);
 
         } catch (IOException e) {e.printStackTrace();} catch (JSONException e) {e.printStackTrace(); }
 
     }
+
 }
+
+
 

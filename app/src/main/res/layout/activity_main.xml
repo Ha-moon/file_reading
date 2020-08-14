@@ -23,7 +23,6 @@
 
     </ImageButton>
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,42 +34,60 @@
         android:layout_marginRight="420px"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="420px"
-        android:textColor="#000000">
+        android:textColor="#000000"
+        android:id="@+id/text_2">
 
     </TextView>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/under_line"
-        android:layout_marginTop="240px"
-        android:layout_width="1000dp"
-        android:layout_height="136px"
-        android:src="@drawable/under_line" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/under_line"-->
+<!--        android:layout_marginTop="240px"-->
+<!--        android:layout_width="1000dp"-->
+<!--        android:layout_height="136px"-->
+<!--        android:src="@drawable/under_line" />-->
 
 
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="366dp"
+        android:layout_height="158dp"
+        android:layout_below="@+id/text_2"
+        android:layout_marginTop="130.64px"
+        android:background="@null"/>
 
     <ImageButton
-        android:layout_marginTop="20dp"
-        android:id="@+id/play_button"
+        android:id="@+id/play_btn"
         android:layout_width="233px"
         android:layout_height="79px"
-        android:layout_below="@+id/under_line"
-        android:background="@null"
-        android:layout_marginRight="116px"
-        android:src="@drawable/play_button"
+        android:layout_below="@+id/videoView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="116px"
+        android:background="@null"
+        android:src="@drawable/play_button"
         android:onClick="clickBtn">
+
+
     </ImageButton>
 
-    <TextView
+    //내용
+    <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv"
-        android:layout_below="@+id/play_button">
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/play_btn"
+        android:layout_marginTop="70.38px">
 
+        <TextView
+            android:layout_marginTop="118.03px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv">
+        </TextView>
 
-    </TextView>
-
-
+    </androidx.core.widget.NestedScrollView>
 
 
 
